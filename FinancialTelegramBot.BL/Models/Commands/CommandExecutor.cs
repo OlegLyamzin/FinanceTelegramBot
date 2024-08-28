@@ -96,6 +96,7 @@ namespace FinancialTelegramBot.BL.Models.Commands
             catch (Exception ex)
             {
                 await new SendMessageToAdminCommand(_bot, this).GetUpdate(update);
+                throw ex;
             }
         }
 

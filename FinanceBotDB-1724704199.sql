@@ -48,14 +48,14 @@ CREATE TABLE IF NOT EXISTS `Currency` (
 );
 
 
-ALTER TABLE `Transactions` ADD CONSTRAINT `Transactions_fk1` FOREIGN KEY (`UserId`) REFERENCES `User`(`id`);
+ALTER TABLE `Transaction` ADD CONSTRAINT `Transactions_fk1` FOREIGN KEY (`UserId`) REFERENCES `User`(`id`);
 
-ALTER TABLE `Transactions` ADD CONSTRAINT `Transactions_fk4` FOREIGN KEY (`CategoryId`) REFERENCES `Category`(`id`);
+ALTER TABLE `Transaction` ADD CONSTRAINT `Transactions_fk4` FOREIGN KEY (`CategoryId`) REFERENCES `Category`(`id`);
 
-ALTER TABLE `Transactions` ADD CONSTRAINT `Transactions_fk5` FOREIGN KEY (`AccountId`) REFERENCES `Account`(`id`);
+ALTER TABLE `Transaction` ADD CONSTRAINT `Transactions_fk5` FOREIGN KEY (`AccountId`) REFERENCES `Account`(`id`);
 ALTER TABLE `Category` ADD CONSTRAINT `Category_fk2` FOREIGN KEY (`UserId`) REFERENCES `User`(`id`);
 
-ALTER TABLE `Category` ADD CONSTRAINT `Category_fk3` FOREIGN KEY (`TypeId`) REFERENCES `CategotyType`(`id`);
+ALTER TABLE `Category` ADD CONSTRAINT `Category_fk3` FOREIGN KEY (`TypeId`) REFERENCES `CategoryType`(`id`);
 
 ALTER TABLE `Account` ADD CONSTRAINT `Account_fk2` FOREIGN KEY (`Currency`) REFERENCES `Currency`(`id`);
 

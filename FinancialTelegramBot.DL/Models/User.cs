@@ -8,7 +8,7 @@ namespace FinancialTelegramBot.DL.Models
 {
     public class User
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string? TgId { get; set; }
         public string? Username { get; set; }
         public string? Name { get; set; }

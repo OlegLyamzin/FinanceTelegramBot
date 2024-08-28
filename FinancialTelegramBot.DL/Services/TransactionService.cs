@@ -55,6 +55,12 @@ namespace FinancialTelegramBot.DL.Services
             await _context.SaveChangesAsync();
             return true;
         }
+
+        public async Task<List<Transaction>> GetAllTransactionsByUserIdAsync(int userId)
+        {
+
+            return await _context.Transaction.Where(trans => trans.UserId == userId).ToListAsync();
+        }
     }
 
 }

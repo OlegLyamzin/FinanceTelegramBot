@@ -67,6 +67,21 @@ namespace FinancialTelegramBot.DL
                 .HasOne(a => a.CurrencyInfo)
                 .WithMany(c => c.Accounts)
                 .HasForeignKey(a => a.Currency);
+
+            modelBuilder.Entity<Transaction>()
+                .HasOne(t => t.User)
+                .WithMany(u => u.Transactions)
+                .HasForeignKey(t => t.UserId);
+
+            modelBuilder.Entity<Transaction>()
+                .HasOne(t => t.Category)
+                .WithMany(c => c.Transactions)
+                .HasForeignKey(t => t.CategoryId);
+
+            modelBuilder.Entity<Transaction>()
+                .HasOne(t => t.Account)
+                .WithMany(a => a.Transactions)
+                .HasForeignKey(t => t.AccountId);
         }
     }
 
